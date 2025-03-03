@@ -19,4 +19,9 @@ describe("String Calculator", () => {
     expect(add("1\n2,3")).toBe(6);
     expect(add("10\n20\n30,40")).toBe(100);
   });
+  test("should support custom delimiters", () => {
+    expect(add("//;\n1;2")).toBe(3);
+    expect(add("//|\n3|5|7")).toBe(15);
+    expect(add("//$\n2$4$6$8")).toBe(20);
+  });
 });
